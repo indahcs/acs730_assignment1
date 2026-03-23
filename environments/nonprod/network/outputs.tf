@@ -20,3 +20,7 @@ output "vpc_cidr" {
 output "private_route_table_id" {
   value = module.aws_network.private_route_table_id
 }
+
+output "public_route_table_id" {
+  value = module.aws_network.public_route_table_id
+}

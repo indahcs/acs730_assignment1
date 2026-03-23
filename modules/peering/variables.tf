@@ -21,3 +21,7 @@ variable "nonprod_vpc_route_table_id" {
 variable "prod_vpc_route_table_id" {
     type = string
 }
+
+variable "nonprod_public_route_table_id" {
+  type = string
+}

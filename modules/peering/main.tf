@@ -22,3 +22,9 @@ resource "aws_route" "prod_to_nonprod" {
   destination_cidr_block = var.nonprod_vpc_cidr
   vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
 }
+
+resource "aws_route" "nonprod_public_to_prod" {
+  route_table_id            = var.nonprod_public_route_table_id
+  destination_cidr_block    = var.prod_vpc_cidr
+  vpc_peering_connection_id = aws_vpc_peering_connection.peering.id
+}

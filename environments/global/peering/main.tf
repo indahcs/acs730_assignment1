@@ -31,4 +31,6 @@ module "peering" {
 
   nonprod_vpc_route_table_id = data.terraform_remote_state.nonprod_network.outputs.private_route_table_id
   prod_vpc_route_table_id    = data.terraform_remote_state.prod_network.outputs.private_route_table_id
-}
+
+  nonprod_public_route_table_id = data.terraform_remote_state.nonprod_network.outputs.public_route_table_id
+}   
