@@ -11,3 +11,8 @@ output "private_subnet_ids" {
 output "vpc_cidr" {
   value = module.aws_network.vpc_cidr
 }
+
+# --- For Peering Connection ---
+output "private_route_table_id" {
+  value = module.aws_network.private_route_table_id
+}
