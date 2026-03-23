@@ -50,7 +50,10 @@ resource "aws_security_group" "vm_sg" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        security_groups = var.deploy_bastion ? [aws_security_group.bastion_sg[0].id] : [var.bastion_sg_id]
+        # if bastion is in same VPC, use SG reference 
+        # if bastion is in different VPC (prod), use CIDR
+        security_groups = var.deploy_bastion ? [aws_security_group.bastion_sg[0].id] : []
+        cidr_blocks = var.deploy_bastion ? [] : [var.allowed_ssh_cidr]
     }
 
     dynamic "ingress" {
@@ -60,7 +63,8 @@ resource "aws_security_group" "vm_sg" {
             from_port = 80
             to_port = 80
             protocol = "tcp"
-            security_groups = var.deploy_bastion ? [aws_security_group.bastion_sg[0].id] : [var.bastion_sg_id]
+            security_groups = var.deploy_bastion ? [aws_security_group.bastion_sg[0].id] : []
+            cidr_blocks     = var.deploy_bastion ? [] : [var.allowed_ssh_cidr]
         }
     }
 
