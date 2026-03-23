@@ -35,6 +35,8 @@ module "aws_compute" {
   install_httpd        = false
   install_mysql_client = true
 
+  allow_mysql_cidr = "10.1.0.0/16" # only nonprod VPC can reach prod via peering connection
+
   # get the nonprod bastion SG id, so it could allow SSH via peering connection
   # bastion_sg_id = data.terraform_remote_state.nonprod_compute.outputs.bastion_sg_id
 }

@@ -69,3 +69,9 @@ variable "owner_name" {
   type = string
   default = "Indah Cahyani Styoningrum"
 }
+
+variable "allow_mysql_cidr" {
+  description = "CIDR block that is allowed to access MySQL on the EC2 instances"
+  type = string
+  default = ""
+}

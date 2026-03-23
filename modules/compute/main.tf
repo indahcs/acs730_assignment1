@@ -68,6 +68,17 @@ resource "aws_security_group" "vm_sg" {
         }
     }
 
+    dynamic "ingress" {
+      for_each = var.install_mysql_client ? [1] : []
+        content {
+            description = "Allow MySQL from bastion host"
+            from_port = 3306
+            to_port = 3306
+            protocol = "tcp"
+            cidr_blocks = [var.allow_mysql_cidr]
+        }
+    }
+
     egress {
         description = "Allow all outbound traffic"
         from_port = 0
