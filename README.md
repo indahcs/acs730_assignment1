@@ -1,8 +1,10 @@
-# ACS730 - Assignment 1: Multi-Environment Infrastructure with Terraform
+# Multi-Environment Infrastructure with Terraform
 
 **Student:** YOUR_NAME  
-**Course:** ACS730: Cloud Automation and Control Systems
+**Course:** ACS730: Cloud Automation and Control Systems  
 **Term:** Winter 2026  
+**Type:** Assignment 1
+**Instructor:** Leo Lu 
 
 ---
 
