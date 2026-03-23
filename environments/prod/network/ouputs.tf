@@ -1,0 +1,13 @@
+# exposes the network values as outputs for use in other modules
+
+output "vpc_id" {
+  value = module.aws_network.vpc_id
+}
+
+output "private_subnet_ids" {
+  value = module.aws_network.private_subnet_ids
+}
+
+output "vpc_cidr" {
+  value = module.aws_network.vpc_cidr
+}
