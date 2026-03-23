@@ -11,16 +11,6 @@ data "terraform_remote_state" "aws_network" {
     }
 }
 
-# Get the nonprod bastion SG id, so it could allow SSH via peering connection
-# data "terraform_remote_state" "nonprod_compute" {
-#     backend = "s3"
-#     config = {
-#         bucket = "icstyoningrum-acs730-tfstate"
-#         key = "nonprod/compute/terraform.tfstate"
-#         region = "us-east-1"
-#     }
-# }
-
 module "aws_compute" {
   source = "../../../modules/compute"
 
@@ -36,7 +26,4 @@ module "aws_compute" {
   install_mysql_client = true
 
   allow_mysql_cidr = "10.1.0.0/16" # only nonprod VPC can reach prod via peering connection
-
-  # get the nonprod bastion SG id, so it could allow SSH via peering connection
-  # bastion_sg_id = data.terraform_remote_state.nonprod_compute.outputs.bastion_sg_id
 }

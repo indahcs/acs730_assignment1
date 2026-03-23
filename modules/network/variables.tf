@@ -1,7 +1,3 @@
-# variable "default_tags" {
-#   type        = map(any)
-#   description = "Default tags to be applied to all AWS resources"
-# }
 variable "availability_zones" {
   description = "List of availability zones to deploy subnets into"
   type        = list(string)
@@ -32,7 +28,3 @@ variable "env" {
     type = string
     description = "Environment name"
 }
-# variable "prefix" {
-#   type        = string
-#   description = "Naming prefix"
-# }
