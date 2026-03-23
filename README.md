@@ -1,10 +1,10 @@
 # Multi-Environment Infrastructure with Terraform
 
-**Student:** YOUR_NAME  
+**Student:** Indah Styoningrum  
 **Course:** ACS730: Cloud Automation and Control Systems  
 **Term:** Winter 2026  
-**Type:** Assignment 1
-**Instructor:** Leo Lu 
+**Type:** Assignment 1  
+**Instructor:** Leo Lu  
 
 ---
 
@@ -80,7 +80,7 @@ chmod 400 acs730-keypair.pem
 
 ### 3. AWS CLI Configured
 
-Make sure your AWS credentials are configured:
+Make sure your AWS credentials (aws_access_key_id, aws_secret_access_key, aws_session_token) are configured:
 ```bash
 aws configure
 ```
